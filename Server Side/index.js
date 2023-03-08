@@ -44,7 +44,7 @@ const run = async () => {
     });
   } finally {
   }
-};
+}
 
 run().catch((err) => console.log(err));
 
