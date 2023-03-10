@@ -12,7 +12,7 @@ const Home = () => {
 
   useEffect(() => {
     dispatch(loadProductData());
-  }, []);
+  }, [dispatch]);
 
   const activeClass = "text-white  bg-indigo-500 border-white";
 
@@ -27,13 +27,13 @@ const Home = () => {
       if (stock) {
         return product.status === true;
       }
-      return product
+      return product;
     })
       .filter(product => {
         if (brands.length) {
           return brands.includes(product.brand)
         }
-        return product
+        return product;
       })
       .map(product => <ProductCard key={product.model} product={product} />)
   }

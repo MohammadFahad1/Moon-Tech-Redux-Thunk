@@ -3,12 +3,12 @@ import { useDispatch, useSelector } from "react-redux";
 import loadProductData from "../../redux/thunk/products/fetchProducts";
 
 const ProductList = () => {
+  const products = useSelector(state => state.product.products)
   const dispatch = useDispatch();
+
   useEffect(() => {
     dispatch(loadProductData())
-  }, []);
-
-  const products = useSelector(state => state)
+  }, [dispatch]);
 
   return (
     <div class='flex flex-col justify-center items-center h-full w-full '>
